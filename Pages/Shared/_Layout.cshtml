@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - moment1</title>
+ 
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/moment1.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+
+    <!-- GRID PARENT-->
+    <div class="grid">
+        <!-- LOGGA -->
+        <div class="div1">
+            <a asp-area="" asp-page="/Index">Moment1</a>
+        </div>
+
+        <!-- DATUM -->
+        <div class="div2">
+            <p>Dagens datum är: @DateTime.Now.ToString("yyyy-MM-dd")</p>
+        </div>
+
+        <!-- NAVIGERING -->
+        <div class="div3">
+            <nav>
+                <ul>
+                    <li>
+                        <a asp-area="" asp-page="/Index">Home</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-page="/About">Om mig</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-page="/Razor">Razor</a>
+                    </li>
+                </ul>
+            </nav>
+
+
+
+        </div>
+        <div class="div4">
+            <main role="main">
+                @RenderBody()
+            </main>
+        </div>
+        <div class="div5">
+            <footer>
+                <p>Av Johanna Karlsson - Kontakta mig via e-post joka2113@Student.miun.se</p>
+            </footer>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
